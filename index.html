@@ -6,13 +6,11 @@
 
 <title>Harry Tour and Travel</title>
 
-<meta name="theme-color" content="#06235d">
-
 <style>
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 html{
@@ -21,604 +19,737 @@ html{
 
 body{
     font-family:Arial,Helvetica,sans-serif;
-    background:#f7f9fc;
+    background:#f5f7fb;
     color:#08245c;
 }
 
-/* TOP BANNER */
-.top{
+/* =========================
+   MAIN HOME IMAGE
+========================= */
+
+.home{
     width:100%;
-    height:205px;
-    background:#fff url("Harry Tour and Travel Call Now Banner.png")
-    center/cover no-repeat;
+    min-height:100vh;
+
+    background-image:url("Harry Tour and Travel Homepage.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    position:relative;
 }
 
-/* NAVIGATION */
-.nav{
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar{
     position:sticky;
     top:0;
-    z-index:50;
-    background:#06235d;
+    z-index:100;
+
+    width:100%;
+
+    background:#06245c;
+
     display:flex;
     justify-content:center;
-    gap:5px;
+    align-items:center;
+
     overflow-x:auto;
 }
 
-.nav button{
+.navbar button{
     border:0;
     background:transparent;
-    color:#fff;
-    font-weight:800;
+
+    color:white;
+
     font-size:17px;
-    padding:18px 25px;
+    font-weight:bold;
+
+    padding:17px 25px;
+
+    cursor:pointer;
+
     white-space:nowrap;
-    cursor:pointer;
 }
 
-.nav button:hover,
-.nav button.active{
-    background:#ffb900;
-}
-
-/* HERO */
-.hero{
-    min-height:620px;
-
-    background:
-    url("Harry Tour and Travel Call Now Banner.png")
-    center/cover no-repeat;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-    padding:40px 18px;
-}
-
-.hero-inner{
-    max-width:1100px;
-    width:100%;
-}
-
-.title{
-    font-size:clamp(43px,7vw,88px);
-    font-weight:900;
-    font-style:italic;
-    color:#06235d;
-
-    text-shadow:
-    2px 2px #fff;
-}
-
-.tag{
-    font-size:clamp(20px,3vw,34px);
-    font-weight:800;
-    font-style:italic;
-    margin:8px 0 28px;
-}
-
-/* SERVICE BUTTONS */
-.services{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-}
-
-.service-btn{
-    min-width:190px;
-
-    border:3px solid #ffb900;
-    border-radius:18px;
-
-    background:#fff;
-    color:#06235d;
-
-    padding:18px 20px;
-
-    font-size:18px;
-    font-weight:900;
-
-    box-shadow:0 6px 18px #0003;
-
-    cursor:pointer;
-}
-
-.service-btn:hover{
-    transform:translateY(-3px);
-}
-
-.service-btn .ico{
-    font-size:34px;
-    display:block;
-    margin-bottom:5px;
-}
-
-/* CALL BUTTON */
-.call{
-    display:inline-flex;
-
-    margin-top:34px;
-
-    border:5px solid #ffb900;
-    border-radius:55px;
-
-    background:#06235d;
+.navbar button:hover,
+.navbar button.active{
+    background:#fdbb12;
     color:#fff;
-
-    padding:16px 42px;
-
-    font-size:40px;
-    font-weight:900;
-
-    text-decoration:none;
-
-    box-shadow:0 8px 25px #0004;
 }
 
-.call:hover{
-    background:#0d347f;
+
+/* =========================
+   CLICKABLE AREAS
+========================= */
+
+.click-area{
+    position:absolute;
+
+    border:none;
+
+    background:transparent;
+
+    cursor:pointer;
+
+    z-index:10;
 }
 
-/* SECTIONS */
-.section{
-    padding:65px 20px;
+
+/* Plan Your Trip */
+.plan-btn{
+    left:4.5%;
+    top:62%;
+
+    width:22%;
+    height:10%;
+}
+
+
+/* Contact Us */
+.contact-btn{
+    left:27%;
+    top:62%;
+
+    width:16%;
+    height:10%;
+}
+
+
+/* Outstation */
+.outstation-btn{
+    left:1.5%;
+    bottom:5%;
+
+    width:19%;
+    height:13%;
+}
+
+
+/* Airport */
+.airport-btn{
+    left:21%;
+    bottom:5%;
+
+    width:19%;
+    height:13%;
+}
+
+
+/* Local */
+.local-btn{
+    left:41%;
+    bottom:5%;
+
+    width:19%;
+    height:13%;
+}
+
+
+/* Tour Packages */
+.tour-btn{
+    left:60%;
+    bottom:5%;
+
+    width:21%;
+    height:13%;
+}
+
+
+/* WhatsApp */
+.whatsapp-btn{
+    right:2%;
+    bottom:5%;
+
+    width:17%;
+    height:14%;
+
+    border-radius:50px;
+}
+
+
+/* =========================
+   CONTENT SECTIONS
+========================= */
+
+section.content{
+    padding:70px 20px;
+
     text-align:center;
+
+    background:white;
 }
 
-.section h2{
+section.content h2{
+    color:#06245c;
+
     font-size:38px;
-    margin-bottom:12px;
+
+    margin-bottom:15px;
 }
 
-.section p{
-    color:#555;
-    max-width:720px;
-    margin:0 auto 30px;
-    line-height:1.6;
-}
+section.content p{
+    max-width:750px;
 
-/* SERVICE CARDS */
-.cards{
-    max-width:1050px;
     margin:auto;
 
+    color:#555;
+
+    line-height:1.7;
+
+    font-size:17px;
+}
+
+
+/* =========================
+   SERVICE CARDS
+========================= */
+
+.services{
+    max-width:1100px;
+
+    margin:40px auto 0;
+
     display:grid;
+
     grid-template-columns:
     repeat(3,1fr);
 
-    gap:20px;
+    gap:22px;
 }
 
 .card{
-    background:#fff;
+    background:white;
+
+    border-top:5px solid #fdbb12;
 
     border-radius:18px;
 
-    padding:28px 20px;
+    padding:30px 20px;
 
-    box-shadow:0 7px 25px #0002;
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.12);
+}
 
-    border-top:5px solid #ffb900;
+.card-icon{
+    font-size:45px;
+
+    margin-bottom:10px;
 }
 
 .card h3{
     font-size:23px;
-    margin:10px 0;
+
+    margin-bottom:10px;
 }
 
-.card .icon{
-    font-size:42px;
+.card p{
+    font-size:15px !important;
+
+    margin-bottom:18px !important;
 }
 
 .card button{
-    margin-top:18px;
-
     border:0;
+
+    background:#06245c;
+
+    color:white;
+
+    padding:12px 24px;
+
     border-radius:30px;
 
-    background:#06235d;
-    color:#fff;
-
-    padding:12px 22px;
-
-    font-weight:800;
+    font-weight:bold;
 
     cursor:pointer;
 }
 
-/* BOOKING FORM */
-.form-box{
+
+/* =========================
+   BOOKING FORM
+========================= */
+
+.booking{
     display:none;
 
     max-width:600px;
 
-    margin:30px auto 0;
+    margin:35px auto 0;
 
-    background:#fff;
-
-    border-radius:20px;
+    background:white;
 
     padding:25px;
 
-    box-shadow:0 8px 30px #0002;
+    border-radius:20px;
+
+    box-shadow:
+    0 8px 30px rgba(0,0,0,.15);
 
     text-align:left;
 }
 
-.form-box.show{
+.booking.show{
     display:block;
 }
 
-label{
-    display:block;
-    font-weight:800;
-    margin:12px 0 6px;
+.booking h2{
+    font-size:28px !important;
+
+    margin-bottom:20px !important;
 }
 
-input,
-select,
-textarea{
+.booking label{
+    display:block;
+
+    margin-top:13px;
+
+    margin-bottom:6px;
+
+    font-weight:bold;
+}
+
+.booking input,
+.booking select,
+.booking textarea{
     width:100%;
 
     padding:13px;
 
     border:1px solid #ccd3df;
 
-    border-radius:10px;
+    border-radius:9px;
 
     font-size:16px;
 }
 
-.submit{
-    margin-top:18px;
-
+.whatsapp-send{
     width:100%;
+
+    margin-top:20px;
 
     padding:15px;
 
     border:0;
 
-    border-radius:12px;
+    border-radius:10px;
 
-    background:#25d366;
+    background:#25D366;
 
-    color:#fff;
-
-    font-weight:900;
+    color:white;
 
     font-size:17px;
 
+    font-weight:bold;
+
     cursor:pointer;
 }
 
-.close{
-    margin-top:10px;
-
+.close-btn{
     width:100%;
 
-    padding:11px;
+    margin-top:10px;
+
+    padding:12px;
 
     border:0;
 
-    border-radius:12px;
+    border-radius:10px;
 
-    background:#e9edf3;
+    background:#e8edf4;
 
-    color:#06235d;
+    color:#06245c;
 
-    font-weight:800;
+    font-weight:bold;
 
     cursor:pointer;
 }
 
-/* GALLERY */
-.gallery img{
-    width:min(1100px,100%);
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-image{
+    width:min(1100px,95%);
 
     border-radius:20px;
 
-    box-shadow:0 8px 28px #0003;
+    margin-top:25px;
+
+    box-shadow:
+    0 8px 30px rgba(0,0,0,.15);
 }
 
-/* WHATSAPP */
-.whatsapp{
-    position:fixed;
 
-    right:18px;
-    bottom:18px;
+/* =========================
+   CONTACT
+========================= */
 
-    z-index:60;
+.call-number{
+    display:inline-block;
 
-    width:62px;
-    height:62px;
+    margin-top:25px;
 
-    border-radius:50%;
+    background:#06245c;
 
-    background:#25d366;
-    color:#fff;
+    color:white;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    border:4px solid #fdbb12;
 
-    font-size:30px;
+    border-radius:45px;
+
+    padding:15px 32px;
+
+    font-size:28px;
+
+    font-weight:bold;
 
     text-decoration:none;
-
-    box-shadow:0 5px 20px #0004;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
+
 footer{
-    background:#06235d;
-    color:#fff;
+    background:#06245c;
+
+    color:white;
 
     text-align:center;
 
-    padding:28px;
+    padding:25px;
 }
 
-/* MOBILE */
-@media(max-width:750px){
 
-    .top{
-        height:125px;
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    .home{
+        min-height:100vh;
+
+        background-size:cover;
+
+        background-position:center top;
     }
 
-    .nav{
+    .navbar{
         justify-content:flex-start;
     }
 
-    .nav button{
+    .navbar button{
         font-size:14px;
+
         padding:15px 17px;
     }
 
-    .hero{
-        min-height:590px;
-    }
-
-    .title{
-        font-size:45px;
-    }
-
     .services{
-        gap:10px;
-    }
-
-    .service-btn{
-        min-width:145px;
-        font-size:14px;
-        padding:14px 9px;
-    }
-
-    .call{
-        font-size:29px;
-        padding:14px 25px;
-    }
-
-    .cards{
         grid-template-columns:1fr;
     }
 
-    .section h2{
-        font-size:31px;
+    section.content h2{
+        font-size:30px;
+    }
+
+    /*
+    Mobile clickable positions
+    are scaled with the image.
+    */
+
+    .plan-btn{
+        left:4%;
+        top:62%;
+
+        width:25%;
+        height:9%;
+    }
+
+    .contact-btn{
+        left:28%;
+        top:62%;
+
+        width:18%;
+        height:9%;
+    }
+
+    .outstation-btn{
+        left:1%;
+        bottom:5%;
+
+        width:20%;
+        height:13%;
+    }
+
+    .airport-btn{
+        left:21%;
+        bottom:5%;
+
+        width:20%;
+        height:13%;
+    }
+
+    .local-btn{
+        left:41%;
+        bottom:5%;
+
+        width:20%;
+        height:13%;
+    }
+
+    .tour-btn{
+        left:61%;
+        bottom:5%;
+
+        width:20%;
+        height:13%;
+    }
+
+    .whatsapp-btn{
+        right:1%;
+        bottom:5%;
+
+        width:20%;
+        height:13%;
     }
 }
+
 </style>
 </head>
 
 
 <body>
 
-<!-- TOP BANNER -->
-<div class="top"></div>
+
+<!-- ==================================================
+     MAIN DISPLAY
+================================================== -->
+
+<div class="home" id="home">
 
 
-<!-- NAVIGATION -->
-<nav class="nav">
-
-    <button class="active"
-    onclick="goToSection('home',this)">
-        🏠 Home
+    <!-- PLAN YOUR TRIP -->
+    <button
+        class="click-area plan-btn"
+        onclick="openBooking('Outstation Trip')"
+        aria-label="Plan Your Trip">
     </button>
 
-    <button onclick="goToSection('about',this)">
-        👥 About Us
+
+    <!-- CONTACT US -->
+    <button
+        class="click-area contact-btn"
+        onclick="goTo('contact')"
+        aria-label="Contact Us">
     </button>
 
-    <button onclick="goToSection('services',this)">
-        🚗 Our Services
+
+    <!-- OUTSTATION -->
+    <button
+        class="click-area outstation-btn"
+        onclick="openBooking('Outstation Trip')"
+        aria-label="Outstation Trips">
     </button>
 
-    <button onclick="goToSection('gallery',this)">
-        🖼️ Gallery
+
+    <!-- AIRPORT -->
+    <button
+        class="click-area airport-btn"
+        onclick="openBooking('Airport Transfer')"
+        aria-label="Airport Transfers">
     </button>
 
-    <button onclick="goToSection('contact',this)">
-        ✉️ Contact Us
+
+    <!-- LOCAL -->
+    <button
+        class="click-area local-btn"
+        onclick="openBooking('Local Car')"
+        aria-label="Local Travel">
     </button>
 
-</nav>
+
+    <!-- TOUR -->
+    <button
+        class="click-area tour-btn"
+        onclick="openBooking('Tour Package')"
+        aria-label="Tour Packages">
+    </button>
 
 
-<!-- HOME -->
-<section id="home" class="hero">
-
-<div class="hero-inner">
-
-    <div class="title">
-        Harry Tour and Travel
-    </div>
-
-    <div class="tag">
-        Your Journey &nbsp; Our Priority
-    </div>
-
-
-    <!-- MAIN BUTTONS -->
-    <div class="services">
-
-        <button
-        class="service-btn"
-        onclick="openBooking('Local Car')">
-
-            <span class="ico">🚗</span>
-
-            Local Car
-
-        </button>
-
-
-        <button
-        class="service-btn"
-        onclick="openBooking('Outstation Trip')">
-
-            <span class="ico">📍</span>
-
-            Outstation Trips
-
-        </button>
-
-
-        <button
-        class="service-btn"
-        onclick="openBooking('Tour Package')">
-
-            <span class="ico">🧳</span>
-
-            Tour Packages
-
-        </button>
-
-    </div>
-
-
-    <!-- CALL NOW -->
+    <!-- WHATSAPP -->
     <a
-    class="call"
-    href="tel:+917888942866">
-
-        ☎️ Call Now
-
+        class="click-area whatsapp-btn"
+        href="https://wa.me/917888942866?text=Hello%20Harry%20Tour%20and%20Travel%2C%20I%20want%20to%20book%20a%20trip."
+        target="_blank"
+        aria-label="WhatsApp">
     </a>
 
 </div>
 
-</section>
+
+
+<!-- ==================================================
+     NAVIGATION
+================================================== -->
+
+<nav class="navbar">
+
+<button class="active"
+onclick="goTo('home',this)">
+🏠 Home
+</button>
+
+<button onclick="goTo('about',this)">
+👥 About Us
+</button>
+
+<button onclick="goTo('services',this)">
+🚗 Our Services
+</button>
+
+<button onclick="goTo('packages',this)">
+🧳 Tour Packages
+</button>
+
+<button onclick="goTo('gallery',this)">
+🖼️ Gallery
+</button>
+
+<button onclick="goTo('contact',this)">
+✉️ Contact Us
+</button>
+
+</nav>
 
 
 
-<!-- ABOUT -->
-<section id="about" class="section">
+<!-- ==================================================
+     ABOUT
+================================================== -->
+
+<section
+id="about"
+class="content">
 
 <h2>
-    About Us
+About Us
 </h2>
 
 <p>
 Welcome to Harry Tour and Travel.
-Choose your travel service, enter your details
-and send your booking request directly on WhatsApp.
+We provide comfortable local travel,
+outstation trips, airport transfers and
+tour packages.
 </p>
 
 </section>
 
 
 
-<!-- SERVICES -->
-<section id="services" class="section">
+<!-- ==================================================
+     SERVICES
+================================================== -->
+
+<section
+id="services"
+class="content">
 
 <h2>
-    Our Services
+Our Services
 </h2>
 
 <p>
-Select any service below.
-The booking form will open and your entered details
-will be sent to our WhatsApp.
+Select any service to start your booking.
 </p>
 
 
-<div class="cards">
-
-
-<!-- LOCAL -->
-<div class="card">
-
-    <div class="icon">
-        🚗
-    </div>
-
-    <h3>
-        Local Car
-    </h3>
-
-    <p>
-        Comfortable local travel.
-    </p>
-
-    <button
-    onclick="openBooking('Local Car')">
-
-        Book Local Car
-
-    </button>
-
-</div>
-
+<div class="services">
 
 
 <!-- OUTSTATION -->
+
 <div class="card">
 
-    <div class="icon">
-        📍
-    </div>
+<div class="card-icon">
+📍
+</div>
 
-    <h3>
-        Outstation Trips
-    </h3>
+<h3>
+Outstation Trips
+</h3>
 
-    <p>
-        Travel to your destination.
-    </p>
+<p>
+Comfortable travel to your destination.
+</p>
 
-    <button
-    onclick="openBooking('Outstation Trip')">
+<button
+onclick="openBooking('Outstation Trip')">
 
-        Plan Trip
+Plan Trip
 
-    </button>
+</button>
 
 </div>
 
 
 
-<!-- TOUR -->
+<!-- AIRPORT -->
+
 <div class="card">
 
-    <div class="icon">
-        🧳
-    </div>
+<div class="card-icon">
+✈️
+</div>
 
-    <h3>
-        Tour Packages
-    </h3>
+<h3>
+Airport Transfers
+</h3>
 
-    <p>
-        Plan your next journey.
-    </p>
+<p>
+Easy airport pickup and drop service.
+</p>
 
-    <button
-    onclick="openBooking('Tour Package')">
+<button
+onclick="openBooking('Airport Transfer')">
 
-        Plan Package
+Book Transfer
 
-    </button>
+</button>
+
+</div>
+
+
+
+<!-- LOCAL -->
+
+<div class="card">
+
+<div class="card-icon">
+🚗
+</div>
+
+<h3>
+Local Travel
+</h3>
+
+<p>
+Reliable local car service.
+</p>
+
+<button
+onclick="openBooking('Local Car')">
+
+Book Car
+
+</button>
 
 </div>
 
@@ -626,26 +757,35 @@ will be sent to our WhatsApp.
 
 
 
-<!-- BOOKING FORM -->
-<div id="booking" class="form-box">
+<!-- ==================================================
+     BOOKING FORM
+================================================== -->
 
-<h2 style="font-size:28px;">
-    Book / Plan Your Trip
+<div
+id="booking"
+class="booking">
+
+<h2>
+Book / Plan Your Trip
 </h2>
 
 
 <label>
-    Service
+Service
 </label>
 
 <select id="service">
 
 <option>
-Local Car
+Outstation Trip
 </option>
 
 <option>
-Outstation Trip
+Airport Transfer
+</option>
+
+<option>
+Local Car
 </option>
 
 <option>
@@ -657,7 +797,7 @@ Tour Package
 
 
 <label>
-    Your Name
+Your Name
 </label>
 
 <input
@@ -668,7 +808,7 @@ placeholder="Enter your name">
 
 
 <label>
-    Pickup / Starting Location
+Pickup / Starting Location
 </label>
 
 <input
@@ -679,7 +819,7 @@ placeholder="e.g. Chandigarh">
 
 
 <label>
-    Destination
+Destination
 </label>
 
 <input
@@ -690,7 +830,7 @@ placeholder="e.g. Delhi">
 
 
 <label>
-    Travel Date
+Travel Date
 </label>
 
 <input
@@ -700,7 +840,7 @@ type="date">
 
 
 <label>
-    Passengers
+Passengers
 </label>
 
 <input
@@ -712,7 +852,7 @@ placeholder="Number of passengers">
 
 
 <label>
-    Extra Details
+Extra Details
 </label>
 
 <textarea
@@ -724,7 +864,7 @@ placeholder="Any special requirement">
 
 
 <button
-class="submit"
+class="whatsapp-send"
 onclick="sendWhatsApp()">
 
 📲 Send Details on WhatsApp
@@ -734,7 +874,7 @@ onclick="sendWhatsApp()">
 
 
 <button
-class="close"
+class="close-btn"
 onclick="closeBooking()">
 
 Close
@@ -747,11 +887,53 @@ Close
 
 
 
-<!-- GALLERY -->
-<section id="gallery" class="section gallery">
+<!-- ==================================================
+     TOUR PACKAGES
+================================================== -->
+
+<section
+id="packages"
+class="content">
 
 <h2>
-    Gallery
+Tour Packages
+</h2>
+
+<p>
+Plan your next journey with
+Harry Tour and Travel.
+</p>
+
+<button
+onclick="openBooking('Tour Package')"
+style="
+border:0;
+background:#06245c;
+color:white;
+padding:15px 30px;
+border-radius:30px;
+font-weight:bold;
+cursor:pointer;
+">
+
+Plan Tour Package
+
+</button>
+
+</section>
+
+
+
+<!-- ==================================================
+     GALLERY
+================================================== -->
+
+<section
+id="gallery"
+class="content">
+
+<h2>
+Gallery
 </h2>
 
 <p>
@@ -759,27 +941,33 @@ Harry Tour and Travel
 </p>
 
 <img
-src="Harry Tour and Travel Call Now Banner.png"
+class="gallery-image"
+src="Harry Tour and Travel Homepage.png"
 alt="Harry Tour and Travel">
 
 </section>
 
 
 
-<!-- CONTACT -->
-<section id="contact" class="section">
+<!-- ==================================================
+     CONTACT
+================================================== -->
+
+<section
+id="contact"
+class="content">
 
 <h2>
-    Contact Us
+Contact Us
 </h2>
 
 <p>
-Call or WhatsApp us directly for booking.
+Call us directly for booking and travel information.
 </p>
 
 
 <a
-class="call"
+class="call-number"
 href="tel:+917888942866">
 
 ☎️ 78889 42866
@@ -790,21 +978,6 @@ href="tel:+917888942866">
 
 
 
-<!-- WHATSAPP FLOATING BUTTON -->
-<a
-class="whatsapp"
-target="_blank"
-aria-label="WhatsApp"
-
-href="https://wa.me/917888942866?text=Hello%20Harry%20Tour%20and%20Travel%2C%20I%20want%20to%20book%20a%20trip.">
-
-☘
-
-</a>
-
-
-
-<!-- FOOTER -->
 <footer>
 
 © 2026
@@ -822,8 +995,11 @@ Your Journey Our Priority
 
 <script>
 
-/* NAVIGATION */
-function goToSection(id,button){
+/* =========================
+   NAVIGATION
+========================= */
+
+function goTo(id,button){
 
     document
     .getElementById(id)
@@ -833,7 +1009,7 @@ function goToSection(id,button){
 
 
     document
-    .querySelectorAll(".nav button")
+    .querySelectorAll(".navbar button")
     .forEach(function(btn){
 
         btn.classList.remove("active");
@@ -841,20 +1017,28 @@ function goToSection(id,button){
     });
 
 
-    button.classList.add("active");
+    if(button){
+
+        button.classList.add("active");
+
+    }
+
 }
 
 
 
-/* OPEN BOOKING FORM */
+/* =========================
+   OPEN BOOKING
+========================= */
+
 function openBooking(serviceName){
 
     document
     .getElementById("service")
-    .value = serviceName;
+    .value=serviceName;
 
 
-    const form =
+    const form=
     document.getElementById("booking");
 
 
@@ -869,11 +1053,15 @@ function openBooking(serviceName){
         });
 
     },100);
+
 }
 
 
 
-/* CLOSE FORM */
+/* =========================
+   CLOSE BOOKING
+========================= */
+
 function closeBooking(){
 
     document
@@ -884,43 +1072,45 @@ function closeBooking(){
 
 
 
-/* SEND WHATSAPP */
+/* =========================
+   WHATSAPP
+========================= */
+
 function sendWhatsApp(){
 
-    const service =
+    const service=
     document.getElementById("service").value;
 
 
-    const name =
+    const name=
     document.getElementById("name").value.trim();
 
 
-    const pickup =
+    const pickup=
     document.getElementById("pickup").value.trim();
 
 
-    const destination =
+    const destination=
     document.getElementById("destination").value.trim();
 
 
-    const date =
+    const date=
     document.getElementById("date").value;
 
 
-    const people =
+    const people=
     document.getElementById("people").value;
 
 
-    const details =
+    const details=
     document.getElementById("details").value.trim();
 
 
 
-    /* REQUIRED FIELDS */
     if(
-        name === "" ||
-        pickup === "" ||
-        destination === ""
+        name==="" ||
+        pickup==="" ||
+        destination===""
     ){
 
         alert(
@@ -928,12 +1118,12 @@ function sendWhatsApp(){
         );
 
         return;
+
     }
 
 
 
-    /* WHATSAPP MESSAGE */
-    const message =
+    const message=
 
 `Hello Harry Tour and Travel,
 
@@ -955,15 +1145,15 @@ Extra Details: ${details || "None"}`;
 
 
 
-    /* OPEN WHATSAPP */
-    const whatsappURL =
-    "https://wa.me/917888942866?text="
-    +
+    const whatsappLink=
+
+    "https://wa.me/917888942866?text="+
     encodeURIComponent(message);
 
 
+
     window.open(
-        whatsappURL,
+        whatsappLink,
         "_blank"
     );
 
