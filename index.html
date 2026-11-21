@@ -1,52 +1,550 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Harry Tour and Travel</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harry Tour & Travel</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#080808;color:#fff}
-.wrap{max-width:720px;margin:auto;padding:24px 18px 40px}
-.hero{min-height:78vh;display:flex;flex-direction:column;justify-content:center;text-align:center}
-.logo{width:82px;height:82px;margin:0 auto 20px;border:2px solid #d8b45a;border-radius:50%;display:grid;place-items:center;color:#d8b45a;font-size:30px;font-weight:800}
-.kicker{color:#d8b45a;letter-spacing:3px;font-size:12px;font-weight:700}
-h1{font-size:42px;line-height:1.05;margin:12px 0 10px}
-.sub{color:#c9c9c9;font-size:16px;line-height:1.6}
-.buttons{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:26px 0}
-a.btn{padding:15px;border-radius:12px;text-decoration:none;font-weight:800}
-.call{background:#d8b45a;color:#080808}.wa{border:1px solid #d8b45a;color:#fff}
-.card{border:1px solid #332b19;background:#111;border-radius:18px;padding:22px;margin-top:16px}
-.card h2{color:#d8b45a;margin:0 0 12px;font-size:20px}
-.card p{color:#cfcfcf;line-height:1.6;margin:8px 0}
-.services{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-.service{padding:14px;border:1px solid #292929;border-radius:12px;color:#ddd}
-.footer{text-align:center;color:#888;font-size:12px;margin-top:28px}
-@media(max-width:480px){h1{font-size:34px}.buttons,.services{grid-template-columns:1fr}}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#07111d;
+  color:#fff;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:10;
+  background:rgba(5,12,20,.55);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.nav{
+  max-width:1200px;
+  margin:auto;
+  padding:20px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:800;
+  letter-spacing:.5px;
+}
+
+.logo span{
+  color:#d9ad55;
+}
+
+.menu{
+  display:flex;
+  gap:28px;
+}
+
+.menu a{
+  color:#fff;
+  font-size:14px;
+  font-weight:600;
+  transition:.3s;
+}
+
+.menu a:hover{
+  color:#d9ad55;
+}
+
+.hero{
+  min-height:100vh;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+}
+
+.scenery{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3,10,18,.90) 0%,
+      rgba(3,10,18,.62) 48%,
+      rgba(3,10,18,.38) 100%
+    ),
+    linear-gradient(
+      180deg,
+      #14283b 0%,
+      #27445c 45%,
+      #0c1723 100%
+    );
+}
+
+.mountain{
+  position:absolute;
+  bottom:30%;
+  width:0;
+  height:0;
+  border-left:180px solid transparent;
+  border-right:180px solid transparent;
+  border-bottom:300px solid #182d3d;
+  opacity:.9;
+}
+
+.m1{
+  left:5%;
+  transform:scale(1.3);
+}
+
+.m2{
+  left:32%;
+  transform:scale(.9);
+  border-bottom-color:#20394b;
+}
+
+.m3{
+  right:8%;
+  transform:scale(1.45);
+  border-bottom-color:#142839;
+}
+
+.road{
+  position:absolute;
+  left:42%;
+  bottom:-5%;
+  width:28%;
+  height:70%;
+  background:#111b22;
+  transform:perspective(400px) rotateX(55deg);
+  clip-path:polygon(38% 0,62% 0,100% 100%,0 100%);
+  opacity:.9;
+}
+
+.road:after{
+  content:"";
+  position:absolute;
+  left:48%;
+  top:0;
+  width:5px;
+  height:100%;
+  background:repeating-linear-gradient(
+    to bottom,
+    #e8c96f 0 45px,
+    transparent 45px 90px
+  );
+}
+
+.car{
+  position:absolute;
+  right:10%;
+  bottom:18%;
+  width:330px;
+  height:115px;
+  background:linear-gradient(135deg,#c8a24e,#f1d58a 45%,#8c6a2d);
+  border-radius:75px 90px 25px 25px;
+  box-shadow:0 30px 55px rgba(0,0,0,.5);
+  transform:skewX(-5deg);
+}
+
+.car:before{
+  content:"";
+  position:absolute;
+  top:-58px;
+  left:75px;
+  width:175px;
+  height:75px;
+  background:#172a38;
+  border-radius:75px 75px 10px 10px;
+  border:4px solid #b28a40;
+}
+
+.car:after{
+  content:"";
+  position:absolute;
+  left:45px;
+  bottom:-22px;
+  width:55px;
+  height:55px;
+  background:#070b0f;
+  border-radius:50%;
+  box-shadow:205px 0 0 #070b0f;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:1200px;
+  width:100%;
+  margin:auto;
+  padding:120px 6% 80px;
+}
+
+.tag{
+  display:inline-block;
+  color:#e6c77c;
+  border:1px solid rgba(230,199,124,.5);
+  border-radius:30px;
+  padding:9px 18px;
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:24px;
+}
+
+h1{
+  font-size:clamp(44px,8vw,82px);
+  line-height:.98;
+  max-width:700px;
+  margin-bottom:25px;
+}
+
+h1 span{
+  color:#d9ad55;
+}
+
+.hero-content p{
+  color:#d0d8df;
+  font-size:17px;
+  max-width:580px;
+  margin-bottom:32px;
+}
+
+.buttons{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:15px 25px;
+  border-radius:8px;
+  font-weight:700;
+  display:inline-block;
+  transition:.3s;
+}
+
+.primary{
+  background:#d9ad55;
+  color:#07111d;
+}
+
+.primary:hover{
+  background:#f0d28c;
+  transform:translateY(-3px);
+}
+
+.secondary{
+  border:1px solid rgba(255,255,255,.35);
+  background:rgba(255,255,255,.06);
+}
+
+.secondary:hover{
+  border-color:#d9ad55;
+  color:#d9ad55;
+}
+
+section{
+  padding:90px 6%;
+}
+
+.section-title{
+  text-align:center;
+  max-width:700px;
+  margin:0 auto 50px;
+}
+
+.section-title small{
+  color:#d9ad55;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.section-title h2{
+  font-size:40px;
+  margin:8px 0 12px;
+}
+
+.section-title p{
+  color:#94a3b8;
+}
+
+.services{
+  background:#0a1725;
+}
+
+.cards{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.card{
+  padding:32px;
+  border-radius:18px;
+  background:linear-gradient(145deg,#102235,#0b1827);
+  border:1px solid rgba(255,255,255,.08);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(217,173,85,.55);
+}
+
+.icon{
+  font-size:34px;
+  margin-bottom:18px;
+}
+
+.card h3{
+  margin-bottom:10px;
+  font-size:21px;
+}
+
+.card p{
+  color:#9eacbd;
+  font-size:14px;
+}
+
+.about{
+  background:#07111d;
+}
+
+.about-box{
+  max-width:1000px;
+  margin:auto;
+  text-align:center;
+}
+
+.about-box p{
+  color:#aeb9c7;
+  font-size:16px;
+  line-height:1.9;
+}
+
+.contact{
+  background:
+    linear-gradient(135deg,rgba(217,173,85,.14),rgba(7,17,29,.98));
+  text-align:center;
+}
+
+.contact h2{
+  font-size:42px;
+  margin-bottom:15px;
+}
+
+.contact p{
+  color:#b7c2d0;
+  margin-bottom:28px;
+}
+
+footer{
+  background:#040a11;
+  text-align:center;
+  padding:28px;
+  color:#728096;
+  font-size:13px;
+}
+
+@media(max-width:800px){
+  .menu{
+    display:none;
+  }
+
+  .hero{
+    min-height:92vh;
+  }
+
+  .car{
+    right:-80px;
+    bottom:12%;
+    transform:scale(.65);
+    transform-origin:right bottom;
+  }
+
+  .road{
+    left:25%;
+    width:55%;
+  }
+
+  .hero-content{
+    padding-top:140px;
+  }
+
+  h1{
+    font-size:48px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  section{
+    padding:70px 6%;
+  }
+}
 </style>
 </head>
+
 <body>
-<div class="wrap">
-<section class="hero">
-<div class="logo">HT</div>
-<div class="kicker">TRAVEL • TOURS • TRANSFERS</div>
-<h1>Harry Tour and Travel</h1>
-<p class="sub">Premium travel solutions for local, outstation and comfortable long-distance journeys.</p>
-<div class="buttons">
-<a class="btn call" href="tel:+917888942866">Call Now</a>
-<a class="btn wa" href="https://wa.me/917888942866" target="_blank" rel="noopener">WhatsApp</a>
-</div>
-<div class="card">
-<h2>Travel With Confidence</h2>
-<p>Comfortable rides, reliable service and convenient travel planning for your journey.</p>
-<div class="services">
-<a class="service" href="https://wa.me/917888942866?text=I%20want%20an%20Outstation%20booking">Outstation Trips</a>
-<div class="service">Airport Transfers</div>
-<div class="service">Local Travel</div>
-<div class="service">Tour Packages</div>
-</div>
-</div>
-<div class="footer">Harry Tour and Travel • 78889 42866</div>
+
+<header>
+  <div class="nav">
+
+    <div class="logo">
+      Harry <span>Tour & Travel</span>
+    </div>
+
+    <div class="menu">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+  </div>
+</header>
+
+<section class="hero" id="home">
+
+  <div class="scenery"></div>
+
+  <div class="mountain m1"></div>
+  <div class="mountain m2"></div>
+  <div class="mountain m3"></div>
+
+  <div class="road"></div>
+  <div class="car"></div>
+
+  <div class="hero-content">
+
+    <div class="tag">Premium Travel Experience</div>
+
+    <h1>
+      Harry <span>Tour & Travel</span>
+    </h1>
+
+    <p>
+      Your journey deserves comfort, style and reliability.
+      Explore beautiful destinations with a travel experience
+      designed around you.
+    </p>
+
+    <div class="buttons">
+      <a href="#services" class="btn primary">
+        Explore Services
+      </a>
+
+      <a href="tel:7888942866" class="btn secondary">
+        Call Now
+      </a>
+    </div>
+
+  </div>
+
 </section>
-</div>
+
+<section class="services" id="services">
+
+  <div class="section-title">
+    <small>Our Services</small>
+    <h2>Travel Made Simple</h2>
+    <p>
+      Comfortable travel solutions for every kind of journey.
+    </p>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon">🚘</div>
+      <h3>Outstation Trips</h3>
+      <p>
+        Comfortable intercity travel for family trips,
+        business journeys and long-distance travel.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">✈️</div>
+      <h3>Airport Transfers</h3>
+      <p>
+        Smooth pickup and drop services for a stress-free
+        airport journey.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🏔️</div>
+      <h3>Local Travel & Tours</h3>
+      <p>
+        Explore cities, hills and beautiful destinations
+        with flexible travel options.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="about" id="about">
+
+  <div class="about-box">
+
+    <div class="section-title">
+      <small>About Us</small>
+      <h2>Travel With Confidence</h2>
+    </div>
+
+    <p>
+      Harry Tour & Travel is focused on providing comfortable,
+      convenient and dependable travel experiences. Whether it is
+      an airport transfer, an outstation trip or a local tour,
+      we aim to make every journey smooth and memorable.
+    </p>
+
+  </div>
+
+</section>
+
+<section class="contact" id="contact">
+
+  <h2>Ready For Your Next Journey?</h2>
+
+  <p>
+    Contact Harry Tour & Travel and plan your trip today.
+  </p>
+
+  <a href="tel:7888942866" class="btn primary">
+    📞 78889 42866
+  </a>
+
+</section>
+
+<footer>
+  © 2026 Harry Tour & Travel · Premium Travel Services
+</footer>
+
 </body>
-</html>
+  </html>
