@@ -1,267 +1,975 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Harry Tour & Travel | Premium Travel Services</title>
-<meta name="description" content="Harry Tour & Travel - Premium Outstation, Airport Transfer and Local Tour services across Punjab, Delhi and hill destinations.">
+
+<title>Harry Tour and Travel</title>
+
+<meta name="theme-color" content="#06235d">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:#090909;color:#fff;line-height:1.6}
-a{text-decoration:none;color:inherit}
-.gold{color:#f5c542}
-nav{position:fixed;top:0;width:100%;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:16px 7%;background:rgba(0,0,0,.9);border-bottom:1px solid #39301b}
-.logo{font-size:20px;font-weight:800;letter-spacing:1px}
-.logo span{color:#f5c542}
-.nav-btn,.btn,.whatsapp{display:inline-block;background:#f5c542;color:#090909;padding:11px 19px;border-radius:30px;font-weight:bold}
-.hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(90deg,rgba(0,0,0,.94),rgba(0,0,0,.55)),url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1800&q=85') center/cover}
-.hero-content{width:90%;max-width:1150px;margin:auto;padding-top:75px}
-.tag{display:inline-block;border:1px solid #f5c542;color:#f5c542;padding:7px 14px;border-radius:25px;font-size:12px;letter-spacing:2px;margin-bottom:22px}
-.hero h1{font-size:clamp(43px,8vw,82px);line-height:1.05;margin-bottom:22px}
-.hero h1 span{color:#f5c542}
-.hero p{max-width:600px;color:#ddd;font-size:18px;margin-bottom:28px}
-.buttons{display:flex;gap:13px;flex-wrap:wrap}
-.btn-outline{display:inline-block;border:1px solid #aaa;padding:11px 19px;border-radius:30px;font-weight:bold}
-section{padding:85px 7%}
-.section-title{text-align:center;max-width:720px;margin:0 auto 42px}
-.section-title small{color:#f5c542;letter-spacing:3px;font-weight:bold}
-.section-title h2{font-size:clamp(30px,5vw,48px);margin:8px 0}
-.section-title p{color:#aaa}
-.services{background:#101010}
-.service-grid,.destination-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.service-card{min-height:290px;padding:25px;border:1px solid #333;border-radius:18px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(0deg,rgba(0,0,0,.95),rgba(0,0,0,.1)),url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=900&q=80') center/cover}
-.service-card:nth-child(2){background-image:linear-gradient(0deg,rgba(0,0,0,.95),rgba(0,0,0,.1)),url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=900&q=80')}
-.service-card:nth-child(3){background-image:linear-gradient(0deg,rgba(0,0,0,.95),rgba(0,0,0,.1)),url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80')}
-.service-card h3{font-size:25px;color:#f5c542;margin-bottom:8px}
-.service-card p{color:#ddd;margin-bottom:17px}
-.whatsapp{width:max-content;font-size:13px}
-.destinations{background:#090909}
-.destination{height:270px;position:relative;border-radius:17px;overflow:hidden;background-position:center;background-size:cover}
-.destination:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent,rgba(0,0,0,.9))}
-.destination-content{position:absolute;bottom:20px;left:20px;z-index:1}
-.destination-content span{color:#f5c542;font-size:12px;font-weight:bold;letter-spacing:2px}
-.destination-content h3{font-size:27px}
-.delhi{background-image:url('https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=900&q=80')}
-.amritsar{background-image:url('https://images.unsplash.com/photo-1609947017136-9daf32a4a9a4?auto=format&fit=crop&w=900&q=80')}
-.chandigarh{background-image:url('https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=900&q=80')}
-.manali{background-image:url('https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80')}
-.solan{background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80')}
-.mussoorie{background-image:url('https://images.unsplash.com/photo-1597074866923-dc0589150358?auto=format&fit=crop&w=900&q=80')}
-.punjab{background-image:url('https://images.unsplash.com/photo-1595658658481-d53d3f999875?auto=format&fit=crop&w=900&q=80')}
-.hills{background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80')}
-.about{background:linear-gradient(90deg,rgba(0,0,0,.94),rgba(0,0,0,.7)),url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1600&q=80') center/cover}
-.about-inner{max-width:1100px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.about h2{font-size:clamp(35px,5vw,55px);line-height:1.1;margin:12px 0 20px}
-.about p{color:#ccc;margin-bottom:15px}
-.features{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.feature{padding:20px;border:1px solid #444;border-radius:14px;background:rgba(0,0,0,.45)}
-.feature strong{display:block;color:#f5c542}
-.feature span{font-size:13px;color:#ccc}
-.booking{background:#101010}
-.booking-box{max-width:850px;margin:auto;padding:30px;background:#151515;border:1px solid #333;border-radius:20px}
-.booking-box h2{text-align:center;font-size:34px;margin-bottom:8px}
-.booking-box .sub{text-align:center;color:#aaa;margin-bottom:25px}
-form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-label{display:block;color:#ccc;font-size:13px;margin-bottom:6px}
-input,select,textarea{width:100%;padding:13px;border:1px solid #444;border-radius:9px;background:#080808;color:#fff;font-size:15px}
-input:focus,select:focus,textarea:focus{outline:1px solid #f5c542}
-.full,.submit-btn{grid-column:1/-1}
-textarea{min-height:100px;resize:vertical}
-.submit-btn{border:0;border-radius:30px;padding:15px;background:#f5c542;color:#000;font-weight:bold;font-size:15px;cursor:pointer}
-.contact{text-align:center;background:#080808}
-.contact h2{font-size:clamp(30px,5vw,45px);margin-bottom:10px}
-.phone{display:inline-block;color:#f5c542;font-size:29px;font-weight:bold;margin:15px 0 23px}
-footer{text-align:center;padding:23px;color:#888;border-top:1px solid #292929;font-size:13px}
-footer span{color:#f5c542}
-@media(max-width:800px){.service-grid,.destination-grid{grid-template-columns:1fr 1fr}.about-inner{grid-template-columns:1fr}}
-@media(max-width:560px){nav{padding:13px 5%}.logo{font-size:15px}.nav-btn{font-size:12px;padding:9px 13px}.hero h1{font-size:46px}.hero p{font-size:15px}section{padding:65px 5%}.service-grid,.destination-grid,.about-inner,form{grid-template-columns:1fr}.features{grid-template-columns:1fr 1fr}.full,.submit-btn{grid-column:1}.destination{height:235px}.booking-box{padding:20px}.phone{font-size:24px}}
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7f9fc;
+    color:#08245c;
+}
+
+/* TOP BANNER */
+.top{
+    width:100%;
+    height:205px;
+    background:#fff url("Harry Tour and Travel Call Now Banner.png")
+    center/cover no-repeat;
+}
+
+/* NAVIGATION */
+.nav{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:#06235d;
+    display:flex;
+    justify-content:center;
+    gap:5px;
+    overflow-x:auto;
+}
+
+.nav button{
+    border:0;
+    background:transparent;
+    color:#fff;
+    font-weight:800;
+    font-size:17px;
+    padding:18px 25px;
+    white-space:nowrap;
+    cursor:pointer;
+}
+
+.nav button:hover,
+.nav button.active{
+    background:#ffb900;
+}
+
+/* HERO */
+.hero{
+    min-height:620px;
+
+    background:
+    url("Harry Tour and Travel Call Now Banner.png")
+    center/cover no-repeat;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+    padding:40px 18px;
+}
+
+.hero-inner{
+    max-width:1100px;
+    width:100%;
+}
+
+.title{
+    font-size:clamp(43px,7vw,88px);
+    font-weight:900;
+    font-style:italic;
+    color:#06235d;
+
+    text-shadow:
+    2px 2px #fff;
+}
+
+.tag{
+    font-size:clamp(20px,3vw,34px);
+    font-weight:800;
+    font-style:italic;
+    margin:8px 0 28px;
+}
+
+/* SERVICE BUTTONS */
+.services{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.service-btn{
+    min-width:190px;
+
+    border:3px solid #ffb900;
+    border-radius:18px;
+
+    background:#fff;
+    color:#06235d;
+
+    padding:18px 20px;
+
+    font-size:18px;
+    font-weight:900;
+
+    box-shadow:0 6px 18px #0003;
+
+    cursor:pointer;
+}
+
+.service-btn:hover{
+    transform:translateY(-3px);
+}
+
+.service-btn .ico{
+    font-size:34px;
+    display:block;
+    margin-bottom:5px;
+}
+
+/* CALL BUTTON */
+.call{
+    display:inline-flex;
+
+    margin-top:34px;
+
+    border:5px solid #ffb900;
+    border-radius:55px;
+
+    background:#06235d;
+    color:#fff;
+
+    padding:16px 42px;
+
+    font-size:40px;
+    font-weight:900;
+
+    text-decoration:none;
+
+    box-shadow:0 8px 25px #0004;
+}
+
+.call:hover{
+    background:#0d347f;
+}
+
+/* SECTIONS */
+.section{
+    padding:65px 20px;
+    text-align:center;
+}
+
+.section h2{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.section p{
+    color:#555;
+    max-width:720px;
+    margin:0 auto 30px;
+    line-height:1.6;
+}
+
+/* SERVICE CARDS */
+.cards{
+    max-width:1050px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+}
+
+.card{
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:28px 20px;
+
+    box-shadow:0 7px 25px #0002;
+
+    border-top:5px solid #ffb900;
+}
+
+.card h3{
+    font-size:23px;
+    margin:10px 0;
+}
+
+.card .icon{
+    font-size:42px;
+}
+
+.card button{
+    margin-top:18px;
+
+    border:0;
+    border-radius:30px;
+
+    background:#06235d;
+    color:#fff;
+
+    padding:12px 22px;
+
+    font-weight:800;
+
+    cursor:pointer;
+}
+
+/* BOOKING FORM */
+.form-box{
+    display:none;
+
+    max-width:600px;
+
+    margin:30px auto 0;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 8px 30px #0002;
+
+    text-align:left;
+}
+
+.form-box.show{
+    display:block;
+}
+
+label{
+    display:block;
+    font-weight:800;
+    margin:12px 0 6px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+
+    padding:13px;
+
+    border:1px solid #ccd3df;
+
+    border-radius:10px;
+
+    font-size:16px;
+}
+
+.submit{
+    margin-top:18px;
+
+    width:100%;
+
+    padding:15px;
+
+    border:0;
+
+    border-radius:12px;
+
+    background:#25d366;
+
+    color:#fff;
+
+    font-weight:900;
+
+    font-size:17px;
+
+    cursor:pointer;
+}
+
+.close{
+    margin-top:10px;
+
+    width:100%;
+
+    padding:11px;
+
+    border:0;
+
+    border-radius:12px;
+
+    background:#e9edf3;
+
+    color:#06235d;
+
+    font-weight:800;
+
+    cursor:pointer;
+}
+
+/* GALLERY */
+.gallery img{
+    width:min(1100px,100%);
+
+    border-radius:20px;
+
+    box-shadow:0 8px 28px #0003;
+}
+
+/* WHATSAPP */
+.whatsapp{
+    position:fixed;
+
+    right:18px;
+    bottom:18px;
+
+    z-index:60;
+
+    width:62px;
+    height:62px;
+
+    border-radius:50%;
+
+    background:#25d366;
+    color:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:30px;
+
+    text-decoration:none;
+
+    box-shadow:0 5px 20px #0004;
+}
+
+/* FOOTER */
+footer{
+    background:#06235d;
+    color:#fff;
+
+    text-align:center;
+
+    padding:28px;
+}
+
+/* MOBILE */
+@media(max-width:750px){
+
+    .top{
+        height:125px;
+    }
+
+    .nav{
+        justify-content:flex-start;
+    }
+
+    .nav button{
+        font-size:14px;
+        padding:15px 17px;
+    }
+
+    .hero{
+        min-height:590px;
+    }
+
+    .title{
+        font-size:45px;
+    }
+
+    .services{
+        gap:10px;
+    }
+
+    .service-btn{
+        min-width:145px;
+        font-size:14px;
+        padding:14px 9px;
+    }
+
+    .call{
+        font-size:29px;
+        padding:14px 25px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .section h2{
+        font-size:31px;
+    }
+}
 </style>
 </head>
 
+
 <body>
 
-<nav>
-  <div class="logo">HARRY <span>TOUR & TRAVEL</span></div>
-  <a class="nav-btn" href="https://wa.me/917888942866" target="_blank">WhatsApp</a>
+<!-- TOP BANNER -->
+<div class="top"></div>
+
+
+<!-- NAVIGATION -->
+<nav class="nav">
+
+    <button class="active"
+    onclick="goToSection('home',this)">
+        🏠 Home
+    </button>
+
+    <button onclick="goToSection('about',this)">
+        👥 About Us
+    </button>
+
+    <button onclick="goToSection('services',this)">
+        🚗 Our Services
+    </button>
+
+    <button onclick="goToSection('gallery',this)">
+        🖼️ Gallery
+    </button>
+
+    <button onclick="goToSection('contact',this)">
+        ✉️ Contact Us
+    </button>
+
 </nav>
 
-<header class="hero">
-  <div class="hero-content">
-    <div class="tag">PREMIUM TRAVEL EXPERIENCE</div>
-    <h1>Travel <span>Beyond</span><br>Expectations.</h1>
-    <p>Premium travel, cab and tour services across Punjab, Delhi and beautiful hill destinations. Your journey. Our responsibility.</p>
-    <div class="buttons">
-      <a class="btn" href="https://wa.me/917888942866?text=Hello%2C%20I%20want%20to%20book%20an%20Outstation%20Trip." target="_blank">Outstation Trip</a>
-      <a class="btn-outline" href="https://wa.me/917888942866?text=Hello%2C%20I%20need%20an%20Airport%20Transfer." target="_blank">Airport Transfer</a>
-    </div>
-  </div>
-</header>
 
-<section class="services">
-  <div class="section-title">
-    <small>OUR SERVICES</small>
-    <h2>Travel Your Way</h2>
-    <p>Comfortable and professional travel solutions for every journey.</p>
-  </div>
-  <div class="service-grid">
-    <div class="service-card">
-      <h3>Outstation Trips</h3>
-      <p>Comfortable long-distance travel for family, business and personal journeys.</p>
-      <a class="whatsapp" href="https://wa.me/917888942866?text=Hello%2C%20I%20want%20to%20book%20an%20Outstation%20Trip." target="_blank">Book on WhatsApp</a>
+<!-- HOME -->
+<section id="home" class="hero">
+
+<div class="hero-inner">
+
+    <div class="title">
+        Harry Tour and Travel
     </div>
-    <div class="service-card">
-      <h3>Airport Transfer</h3>
-      <p>Convenient pickup and drop service for your airport journey.</p>
-      <a class="whatsapp" href="https://wa.me/917888942866?text=Hello%2C%20I%20need%20an%20Airport%20Transfer." target="_blank">Book on WhatsApp</a>
+
+    <div class="tag">
+        Your Journey &nbsp; Our Priority
     </div>
-    <div class="service-card">
-      <h3>Local Tour</h3>
-      <p>Explore destinations comfortably with convenient local travel.</p>
-      <a class="whatsapp" href="https://wa.me/917888942866?text=Hello%2C%20I%20want%20to%20book%20a%20Local%20Tour." target="_blank">Book on WhatsApp</a>
+
+
+    <!-- MAIN BUTTONS -->
+    <div class="services">
+
+        <button
+        class="service-btn"
+        onclick="openBooking('Local Car')">
+
+            <span class="ico">🚗</span>
+
+            Local Car
+
+        </button>
+
+
+        <button
+        class="service-btn"
+        onclick="openBooking('Outstation Trip')">
+
+            <span class="ico">📍</span>
+
+            Outstation Trips
+
+        </button>
+
+
+        <button
+        class="service-btn"
+        onclick="openBooking('Tour Package')">
+
+            <span class="ico">🧳</span>
+
+            Tour Packages
+
+        </button>
+
     </div>
-  </div>
+
+
+    <!-- CALL NOW -->
+    <a
+    class="call"
+    href="tel:+917888942866">
+
+        ☎️ Call Now
+
+    </a>
+
+</div>
+
 </section>
 
-<section class="destinations">
-  <div class="section-title">
-    <small>DESTINATIONS</small>
-    <h2>From Cities to Hills</h2>
-    <p>Travel across Punjab, Delhi and beautiful destinations in North India.</p>
-  </div>
-  <div class="destination-grid">
-    <div class="destination delhi"><div class="destination-content"><span>DELHI</span><h3>Red Fort</h3></div></div>
-    <div class="destination amritsar"><div class="destination-content"><span>PUNJAB</span><h3>Amritsar</h3></div></div>
-    <div class="destination chandigarh"><div class="destination-content"><span>PUNJAB</span><h3>Chandigarh</h3></div></div>
-    <div class="destination manali"><div class="destination-content"><span>HIMACHAL</span><h3>Manali</h3></div></div>
-    <div class="destination solan"><div class="destination-content"><span>HIMACHAL</span><h3>Solan</h3></div></div>
-    <div class="destination mussoorie"><div class="destination-content"><span>UTTARAKHAND</span><h3>Mussoorie</h3></div></div>
-    <div class="destination punjab"><div class="destination-content"><span>PUNJAB</span><h3>Explore Punjab</h3></div></div>
-    <div class="destination hills"><div class="destination-content"><span>HILL JOURNEYS</span><h3>Mountain Escape</h3></div></div>
-  </div>
+
+
+<!-- ABOUT -->
+<section id="about" class="section">
+
+<h2>
+    About Us
+</h2>
+
+<p>
+Welcome to Harry Tour and Travel.
+Choose your travel service, enter your details
+and send your booking request directly on WhatsApp.
+</p>
+
 </section>
 
-<section class="about">
-  <div class="about-inner">
-    <div>
-      <small class="gold">HARRY TOUR & TRAVEL</small>
-      <h2>Your Journey.<br><span class="gold">Our Responsibility.</span></h2>
-      <p>We provide travel and cab services designed around comfort, convenience and reliability.</p>
-      <p>Whether it is an outstation journey, airport transfer or local tour, we are here to make your travel smooth.</p>
-      <a class="btn" href="https://wa.me/917888942866?text=Hello%2C%20I%20want%20to%20know%20more%20about%20Harry%20Tour%20%26%20Travel." target="_blank">Talk to Us</a>
+
+
+<!-- SERVICES -->
+<section id="services" class="section">
+
+<h2>
+    Our Services
+</h2>
+
+<p>
+Select any service below.
+The booking form will open and your entered details
+will be sent to our WhatsApp.
+</p>
+
+
+<div class="cards">
+
+
+<!-- LOCAL -->
+<div class="card">
+
+    <div class="icon">
+        🚗
     </div>
-    <div class="features">
-      <div class="feature"><strong>Comfort</strong><span>Travel with convenience and peace of mind.</span></div>
-      <div class="feature"><strong>Reliable Service</strong><span>Professional service for your journeys.</span></div>
-      <div class="feature"><strong>Flexible Travel</strong><span>Plans around your requirements.</span></div>
-      <div class="feature"><strong>Wide Coverage</strong><span>Punjab, Delhi, hills and more destinations.</span></div>
+
+    <h3>
+        Local Car
+    </h3>
+
+    <p>
+        Comfortable local travel.
+    </p>
+
+    <button
+    onclick="openBooking('Local Car')">
+
+        Book Local Car
+
+    </button>
+
+</div>
+
+
+
+<!-- OUTSTATION -->
+<div class="card">
+
+    <div class="icon">
+        📍
     </div>
-  </div>
+
+    <h3>
+        Outstation Trips
+    </h3>
+
+    <p>
+        Travel to your destination.
+    </p>
+
+    <button
+    onclick="openBooking('Outstation Trip')">
+
+        Plan Trip
+
+    </button>
+
+</div>
+
+
+
+<!-- TOUR -->
+<div class="card">
+
+    <div class="icon">
+        🧳
+    </div>
+
+    <h3>
+        Tour Packages
+    </h3>
+
+    <p>
+        Plan your next journey.
+    </p>
+
+    <button
+    onclick="openBooking('Tour Package')">
+
+        Plan Package
+
+    </button>
+
+</div>
+
+</div>
+
+
+
+<!-- BOOKING FORM -->
+<div id="booking" class="form-box">
+
+<h2 style="font-size:28px;">
+    Book / Plan Your Trip
+</h2>
+
+
+<label>
+    Service
+</label>
+
+<select id="service">
+
+<option>
+Local Car
+</option>
+
+<option>
+Outstation Trip
+</option>
+
+<option>
+Tour Package
+</option>
+
+</select>
+
+
+
+<label>
+    Your Name
+</label>
+
+<input
+id="name"
+type="text"
+placeholder="Enter your name">
+
+
+
+<label>
+    Pickup / Starting Location
+</label>
+
+<input
+id="pickup"
+type="text"
+placeholder="e.g. Chandigarh">
+
+
+
+<label>
+    Destination
+</label>
+
+<input
+id="destination"
+type="text"
+placeholder="e.g. Delhi">
+
+
+
+<label>
+    Travel Date
+</label>
+
+<input
+id="date"
+type="date">
+
+
+
+<label>
+    Passengers
+</label>
+
+<input
+id="people"
+type="number"
+min="1"
+placeholder="Number of passengers">
+
+
+
+<label>
+    Extra Details
+</label>
+
+<textarea
+id="details"
+rows="3"
+placeholder="Any special requirement">
+</textarea>
+
+
+
+<button
+class="submit"
+onclick="sendWhatsApp()">
+
+📲 Send Details on WhatsApp
+
+</button>
+
+
+
+<button
+class="close"
+onclick="closeBooking()">
+
+Close
+
+</button>
+
+</div>
+
 </section>
 
-<section class="booking">
-  <div class="section-title">
-    <small>BOOK YOUR JOURNEY</small>
-    <h2>Tell Us Your Requirement</h2>
-    <p>Fill in your details and send your booking request directly to WhatsApp.</p>
-  </div>
 
-  <div class="booking-box">
-    <h2>Booking Request</h2>
-    <p class="sub">We will receive your details on WhatsApp.</p>
 
-    <form id="bookingForm">
-      <div>
-        <label for="name">Customer Name</label>
-        <input id="name" type="text" placeholder="Enter your name" required>
-      </div>
-      <div>
-        <label for="mobile">Mobile Number</label>
-        <input id="mobile" type="tel" inputmode="numeric" pattern="[0-9+\-\s]{10,15}" placeholder="Enter mobile number" required>
-      </div>
-      <div>
-        <label for="pickup">Pickup Location</label>
-        <input id="pickup" type="text" placeholder="Pickup location" required>
-      </div>
-      <div>
-        <label for="destination">Destination</label>
-        <input id="destination" type="text" placeholder="Where do you want to go?" required>
-      </div>
-      <div>
-        <label for="date">Travel Date</label>
-        <input id="date" type="date" required>
-      </div>
-      <div>
-        <label for="passengers">Number of Passengers</label>
-        <select id="passengers" required>
-          <option value="">Select passengers</option>
-          <option>1</option><option>2</option><option>3</option>
-          <option>4</option><option>5</option><option>6</option><option>7+</option>
-        </select>
-      </div>
-      <div class="full">
-        <label for="service">Service</label>
-        <select id="service" required>
-          <option value="">Select service</option>
-          <option>Outstation Trip</option>
-          <option>Airport Transfer</option>
-          <option>Local Tour</option>
-        </select>
-      </div>
-      <div class="full">
-        <label for="message">Message / Requirement</label>
-        <textarea id="message" placeholder="Any other details about your journey?"></textarea>
-      </div>
-      <button class="submit-btn" type="submit">SEND BOOKING REQUEST ON WHATSAPP</button>
-    </form>
-  </div>
+<!-- GALLERY -->
+<section id="gallery" class="section gallery">
+
+<h2>
+    Gallery
+</h2>
+
+<p>
+Harry Tour and Travel
+</p>
+
+<img
+src="Harry Tour and Travel Call Now Banner.png"
+alt="Harry Tour and Travel">
+
 </section>
 
-<section class="contact">
-  <div class="section-title">
-    <small>GET IN TOUCH</small>
-    <h2>Ready for Your Next Journey?</h2>
-    <p>Contact Harry Tour & Travel for your travel requirements.</p>
-  </div>
-  <a class="phone" href="tel:+917888942866">78889 42866</a><br>
-  <a class="btn" href="https://wa.me/917888942866?text=Hello%2C%20I%20want%20to%20book%20a%20journey." target="_blank">Chat on WhatsApp</a>
+
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+
+<h2>
+    Contact Us
+</h2>
+
+<p>
+Call or WhatsApp us directly for booking.
+</p>
+
+
+<a
+class="call"
+href="tel:+917888942866">
+
+☎️ 78889 42866
+
+</a>
+
 </section>
 
+
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a
+class="whatsapp"
+target="_blank"
+aria-label="WhatsApp"
+
+href="https://wa.me/917888942866?text=Hello%20Harry%20Tour%20and%20Travel%2C%20I%20want%20to%20book%20a%20trip.">
+
+☘
+
+</a>
+
+
+
+<!-- FOOTER -->
 <footer>
-  © 2026 <span>Harry Tour & Travel</span>. All Rights Reserved.
+
+© 2026
+<b>
+Harry Tour and Travel
+</b>
+
+<br>
+
+Your Journey Our Priority
+
 </footer>
 
+
+
 <script>
-document.getElementById("bookingForm").addEventListener("submit", function(event) {
-  event.preventDefault();
 
-  const name = document.getElementById("name").value.trim();
-  const mobile = document.getElementById("mobile").value.trim();
-  const pickup = document.getElementById("pickup").value.trim();
-  const destination = document.getElementById("destination").value.trim();
-  const date = document.getElementById("date").value;
-  const passengers = document.getElementById("passengers").value;
-  const service = document.getElementById("service").value;
-  const message = document.getElementById("message").value.trim();
+/* NAVIGATION */
+function goToSection(id,button){
 
-  const bookingMessage =
-    "Hello Harry Tour & Travel, I want to make a booking.%0A%0A" +
-    "Name: " + encodeURIComponent(name) + "%0A" +
-    "Mobile: " + encodeURIComponent(mobile) + "%0A" +
-    "Pickup: " + encodeURIComponent(pickup) + "%0A" +
-    "Destination: " + encodeURIComponent(destination) + "%0A" +
-    "Travel Date: " + encodeURIComponent(date) + "%0A" +
-    "Passengers: " + encodeURIComponent(passengers) + "%0A" +
-    "Service: " + encodeURIComponent(service) + "%0A" +
-    "Message: " + encodeURIComponent(message);
+    document
+    .getElementById(id)
+    .scrollIntoView({
+        behavior:"smooth"
+    });
 
-  const whatsappURL = "https://wa.me/917888942866?text=" + bookingMessage;
-  window.open(whatsappURL, "_blank");
-});
+
+    document
+    .querySelectorAll(".nav button")
+    .forEach(function(btn){
+
+        btn.classList.remove("active");
+
+    });
+
+
+    button.classList.add("active");
+}
+
+
+
+/* OPEN BOOKING FORM */
+function openBooking(serviceName){
+
+    document
+    .getElementById("service")
+    .value = serviceName;
+
+
+    const form =
+    document.getElementById("booking");
+
+
+    form.classList.add("show");
+
+
+    setTimeout(function(){
+
+        form.scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+        });
+
+    },100);
+}
+
+
+
+/* CLOSE FORM */
+function closeBooking(){
+
+    document
+    .getElementById("booking")
+    .classList.remove("show");
+
+}
+
+
+
+/* SEND WHATSAPP */
+function sendWhatsApp(){
+
+    const service =
+    document.getElementById("service").value;
+
+
+    const name =
+    document.getElementById("name").value.trim();
+
+
+    const pickup =
+    document.getElementById("pickup").value.trim();
+
+
+    const destination =
+    document.getElementById("destination").value.trim();
+
+
+    const date =
+    document.getElementById("date").value;
+
+
+    const people =
+    document.getElementById("people").value;
+
+
+    const details =
+    document.getElementById("details").value.trim();
+
+
+
+    /* REQUIRED FIELDS */
+    if(
+        name === "" ||
+        pickup === "" ||
+        destination === ""
+    ){
+
+        alert(
+            "Please enter Name, Pickup and Destination."
+        );
+
+        return;
+    }
+
+
+
+    /* WHATSAPP MESSAGE */
+    const message =
+
+`Hello Harry Tour and Travel,
+
+I want to book a trip.
+
+Service: ${service}
+
+Name: ${name}
+
+Pickup: ${pickup}
+
+Destination: ${destination}
+
+Travel Date: ${date || "Not specified"}
+
+Passengers: ${people || "Not specified"}
+
+Extra Details: ${details || "None"}`;
+
+
+
+    /* OPEN WHATSAPP */
+    const whatsappURL =
+    "https://wa.me/917888942866?text="
+    +
+    encodeURIComponent(message);
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+}
+
 </script>
 
 </body>
 </html>
-
